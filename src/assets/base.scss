@@ -1,0 +1,315 @@
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+body {
+  line-height:1;
+}
+
+:focus {
+  outline: 1;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary {
+  display:block;
+}
+
+nav ul {
+  list-style:none;
+}
+
+blockquote, q {
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
+a {
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+
+mark {
+  background-color:#ff9;
+  color:#000;
+  font-style:italic;
+  font-weight:bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom:1px dotted #000;
+  cursor:help;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+input, select {
+  vertical-align:middle;
+}
+
+
+.redColor {
+    color: red;
+}
+
+/* 公用类 start */
+
+.clearfix {
+    // display: inline-block;
+    &:after {
+        display: block;
+        content: ".";
+        height: 0;
+        line-height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+li{
+    list-style: none;
+}
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.mb10{
+  margin-bottom: 10px;
+}
+.mt10{
+  margin-top: 10px;
+}
+
+.mb0 {
+    margin-bottom: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.disabled{
+    opacity: 0.5;
+	filter:alpha(opacity=50);
+    cursor: no-drop;
+}
+
+.fontWhite{
+    color: #fff;
+}
+
+// 阻止文字选中
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+// 底部按钮
+.footer-btns-left,
+.footer-btns-right {
+    margin-top: 30px;
+    button {
+        // float: right;
+        &:not(:last-child) {
+            margin-left: 15px;
+        }
+    }
+}
+.footer-btns-left{
+    text-align: left;
+}
+.footer-btns-right{
+    text-align: right;
+}
+
+.w50{
+    width: 50%;
+}
+
+// 页面边距
+.warp-box{
+    padding: 20px;
+}
+
+// 页面主题内容距离
+.page-con{
+    z-index: 2;
+    padding: 28px 32px;
+}
+
+// 图标
+.icon-add,
+.icon-reload{
+    font-size: 17px;
+    margin-right: 4px;
+}
+
+
+/*  响应式 */
+// 1像素大小
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5){
+    .border-1px,
+    .border-bottom-1px,
+    .border-bottom-1px,
+    .border-right-1px,
+    .border-left-1px,
+    .border-top-1px{
+        &::after{
+            -webkit-transform: scaleY(0.7);
+            transform: scaleY(0.7);
+        }
+    }
+}
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+    .border-1px,
+    .border-bottom-1px,
+    .border-right-1px,
+    .border-left-1px,
+    .border-top-1px{
+        &::after{
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+    }
+}
+
+
+//搜索页面 弹出动画
+.search-page-enter-active,.search-page-leave-active{
+    transition: all 0.5s;
+}
+.search-page-enter,.search-page-leave-to{
+    transform:translateX(p(1320)) ;
+    opacity: 0;
+}
+
+
+html,body{
+    height: 100%;
+}
+
+@function p($number){
+  @return $number/2* 1px;
+}
+
+.el-container.is-vertical{
+  position: relative;
+  height: 100%;
+  .el-header{
+    font-size: 20px;
+    font-weight: bolder;
+    line-height: 60px;
+    display: flex;
+    flex-direction:row;
+    .el-icon-more{
+      font-size: 32px;
+    }
+    .left{
+      flex:1;
+      text-align: left;
+    }
+    .mid{
+      flex:3;
+      text-align: center;
+    }
+    .right{
+      flex:1;
+      text-align: right;
+    }
+  }
+  .el-main{
+    position: absolute;
+    top:60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding:10px 20px;
+    .el-input__inner{
+      border: none;
+      background-color: #1d1d1d;
+      color:#fff;
+      font-weight: lighter;
+    }
+  }
+  .el-footer{
+    font-size: 12px;
+    line-height: 60px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+  }
+
+}
+
+.el-message{
+  min-width: 80%;
+  width: 80%;
+}
